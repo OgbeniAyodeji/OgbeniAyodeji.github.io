@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayodeji Ogundipe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -13,245 +13,305 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e1e2f 0%, #2c3e50 100%);
-            color: #ecf0f1;
+            background: #0a0a23;
+            color: #f5f6f5;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         h1, h2, h3 {
-            font-weight: 800;
+            font-weight: 600;
             margin: 0;
         }
 
         a {
             color: #00ddeb;
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         a:hover {
             color: #ff6b6b;
-            transform: scale(1.05);
-        }
-
-        /* Navigation Bar */
-        nav {
-            background: rgba(30, 30, 47, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
-        }
-
-        nav:hover {
-            background: rgba(30, 30, 47, 1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 25px;
-            transform: translateY(-10px);
-            opacity: 0;
-            animation: slideInNav 0.5s ease forwards;
-            animation-delay: calc(0.1s * var(--i));
-        }
-
-        @keyframes slideInNav {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        nav ul li a {
-            color: #ecf0f1;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            transform: translateY(-3px);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #00ddeb;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
         }
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #00ddeb 0%, #ff6b6b 100%);
             text-align: center;
-            padding: 120px 20px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0a0a23, #1e1e2f);
             position: relative;
-            overflow: hidden;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #ecf0f1;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 5px solid #00ddeb;
             margin-bottom: 20px;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            transition: transform 0.5s ease, border-color 0.5s ease;
         }
 
         header:hover .profile-img {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+            border-color: #ff6b6b;
         }
 
         header h1 {
             font-size: 3.5em;
+            color: #f5f6f5;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transform: scale(0.9);
-            opacity: 0;
-            animation: fadeInTitle 1s ease forwards 0.5s;
+            animation: fadeIn 1s ease forwards;
         }
 
-        header p {
-            font-size: 1.4em;
-            font-weight: 400;
-            margin-top: 10px;
-            opacity: 0;
-            animation: fadeInText 1s ease forwards 0.8s;
+        .bio {
+            font-size: 1.5em;
+            color: #bdc3c7;
+            margin: 20px 0;
         }
 
-        @keyframes fadeInTitle {
-            to { transform: scale(1); opacity: 1; }
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #00ddeb;
+            animation: typing 4s steps(40, end) infinite, blink 0.75s step-end infinite;
         }
 
-        @keyframes fadeInText {
-            to { opacity: 0.9; }
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            font-size: 1.8em;
+            margin: 0 15px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: #ff6b6b;
         }
 
         /* Section Styles */
         section {
-            padding: 100px 20px;
-            position: relative;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.8em;
+            font-size: 2.5em;
             color: #00ddeb;
-            margin-bottom: 60px;
+            text-align: center;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0, 221, 235, 0.5);
-            transform: scale(0.8);
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #bdc3c7;
+            text-align: center;
+        }
+
+        /* Cards (Services, Projects, Skills) */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #1e1e2f;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 221, 235, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
             transition: transform 0.5s ease;
         }
 
-        section:hover .section-title {
-            transform: scale(1);
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #f5f6f5;
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            color: #bdc3c7;
+            font-size: 1em;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Project Images Carousel */
+        .project-images {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .project-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-images img.active {
+            opacity: 1;
+        }
+
+        .card:hover .project-images img {
+            animation: cycleImages 6s infinite;
+        }
+
+        @keyframes cycleImages {
+            0%, 33% { opacity: 1; }
+            34%, 66% { opacity: 0; }
+            67%, 100% { opacity: 0; }
         }
 
         /* Skills Section */
-        .skills {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 50px;
-        }
-
-        .skill {
+        .skills .card {
             text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
         }
 
-        .skill:hover {
-            transform: scale(1.15) rotate(3deg);
-            box-shadow: 0 10px 20px rgba(0, 221, 235, 0.3);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .skill i {
-            font-size: 70px;
-            color: #ff6b6b;
-            margin-bottom: 20px;
+        .skills .card i {
+            font-size: 3em;
+            color: #00ddeb;
+            margin-bottom: 15px;
             transition: transform 0.4s ease;
         }
 
-        .skill:hover i {
-            transform: rotate(-10deg);
+        .skills .card:hover i {
+            transform: scale(1.2) rotate(10deg);
         }
 
-        .skill p {
-            font-size: 1.3em;
+        /* Contact Section */
+        #contact {
+            background: #1e1e2f;
+            border-radius: 15px;
+            padding: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: #0a0a23;
+            color: #f5f6f5;
+            font-size: 1em;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: #2c3e50;
+            transform: scale(1.02);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            background: linear-gradient(135deg, #00ddeb, #ff6b6b);
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
             font-weight: 600;
-            color: #ecf0f1;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 221, 235, 0.4);
         }
 
         /* Footer */
         footer {
-            background: rgba(30, 30, 47, 0.9);
-            backdrop-filter: blur(10px);
-            color: #ecf0f1;
             text-align: center;
             padding: 40px;
-            font-size: 1.1em;
-            transition: background 0.3s ease;
-        }
-
-        footer:hover {
-            background: rgba(30, 30, 47, 1);
+            background: #0a0a23;
+            color: #bdc3c7;
+            font-size: 1em;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li style="--i: 1;"><a href="#about">About</a></li>
-            <li style="--i: 2;"><a href="#services">Services</a></li>
-            <li style="--i: 3;"><a href="#projects">Projects</a></li>
-            <li style="--i: 4;"><a href="#skills">Skills</a></li>
-        </ul>
-    </nav>
-
     <!-- Header Section -->
     <header>
-        <img src="https://via.placeholder.com/150" alt="Ayodeji Ogundipe Profile" class="profile-img">
+        <img src="https://via.placeholder.com/180" alt="Ayodeji Ogundipe Profile" class="profile-img">
         <h1>Ayodeji Ogundipe</h1>
-        <p>OgbeniAyodeji · he/him | Data Analyst | BI Analyst</p>
+        <div class="bio">
+            <span class="typewriter">OgbeniAyodeji · he/him | Data Analyst | BI Analyst</span>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/OgbeniAyodeji" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/your-twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </header>
 
     <!-- About Me Section -->
@@ -263,21 +323,66 @@
     <!-- Services Section -->
     <section id="services">
         <h2 class="section-title">Services</h2>
-        <div class="services">
-            <div class="service-card">
+        <div class="cards">
+            <div class="card">
                 <img src="https://via.placeholder.com/400x180" alt="Python Services">
                 <h3>Python Solutions</h3>
                 <p>Custom scripts, automation tools, and web apps built with Python’s power.</p>
             </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x180" alt="Data Visualization">
-                <h3>Data Visualization</h3>
-                <p>Transform raw data into easy-to-understand visuals using Tableau.</p>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x180" alt="Data Analysis Services">
+                <h3>Data Analysis</h3>
+                <p>Deep insights, statistical modeling, and visualization from raw data.</p>
             </div>
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x180" alt="SQL Services">
-                <h3>SQL Analysis</h3>
-                <p>Expert-level querying, database optimization, and complex data analysis.</p>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x180" alt="Machine Learning Services">
+                <h3>Machine Learning</h3>
+                <p>Predictive models, AI-driven solutions, and intelligent automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="project-images">
+                    <img src="https://via.placeholder.com/400x180" alt="Telecom Churn 1" class="active">
+                    <img src="https://via.placeholder.com/400x180/FF5733" alt="Telecom Churn 2">
+                    <img src="https://via.placeholder.com/400x180/33FF57" alt="Telecom Churn 3">
+                </div>
+                <h3>Telecom-Churn</h3>
+                <p>Analyzing customer churn in telecom using Jupyter Notebook to uncover retention strategies.</p>
+                <a href="https://github.com/OgbeniAyodeji/Telecom-Churn" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <div class="project-images">
+                    <img src="https://via.placeholder.com/400x180" alt="Tableau Viz 1" class="active">
+                    <img src="https://via.placeholder.com/400x180/FFC107" alt="Tableau Viz 2">
+                </div>
+                <h3>Tableau-Visualisation-Of-Datasets</h3>
+                <p>Visualizing datasets with Tableau to reveal trends and insights.</p>
+                <a href="https://github.com/OgbeniAyodeji/Tableau-Visualisation-Of-Datasets" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <div class="project-images">
+                    <img src="https://via.placeholder.com/400x180" alt="R Analysis 1" class="active">
+                    <img src="https://via.placeholder.com/400x180/9C27B0" alt="R Analysis 2">
+                    <img src="https://via.placeholder.com/400x180/2196F3" alt="R Analysis 3">
+                </div>
+                <h3>R-Analysis</h3>
+                <p>Customer segmentation with clustering and classification in R.</p>
+                <a href="https://github.com/OgbeniAyodeji/R-Analysis" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <div class="project-images">
+                    <img src="https://via.placeholder.com/400x180" alt="SQL Analysis 1" class="active">
+                    <img src="https://via.placeholder.com/400x180/4CAF50" alt="SQL Analysis 2">
+                </div>
+                <h3>SQL-Analysis</h3>
+                <p>Data-driven decision-making with SQL on complex datasets.</p>
+                <a href="https://github.com/OgbeniAyodeji/SQL-Analysis" target="_blank">View Project</a>
             </div>
         </div>
     </section>
@@ -285,26 +390,56 @@
     <!-- Skills Section -->
     <section id="skills">
         <h2 class="section-title">Skills</h2>
-        <div class="skills">
-            <div class="skill">
-                <i class="fab fa-python"></i>
-                <p>Python</p>
-            </div>
-            <div class="skill">
+        <div class="cards">
+            <div class="card">
                 <i class="fas fa-database"></i>
-                <p>SQL</p>
+                <h3>SQL</h3>
+                <p>Expertise in querying and managing complex databases.</p>
             </div>
-            <div class="skill">
-                <i class="fab fa-tableau"></i>
-                <p>Tableau</p>
+            <div class="card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Tableau</h3>
+                <p>Building interactive dashboards for data insights.</p>
             </div>
+            <div class="card">
+                <i class="fab fa-r-project"></i>
+                <h3>R</h3>
+                <p>Statistical analysis and data modeling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-form">
+            <form action="mailto:YOUR_EMAIL_HERE@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Ayodeji Ogundipe | All Rights Reserved</p>
+        <p>© 2025 Ayodeji Ogundipe | <a href="mailto:YOUR_EMAIL_HERE@example.com">YOUR_EMAIL_HERE@example.com</a></p>
     </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 
 </body>
 
