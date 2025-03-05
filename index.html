@@ -35,18 +35,6 @@
             transform: scale(1.05);
         }
 
-        /* Scroll Reveal Effect */
-        section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Navigation Bar */
         nav {
             background: rgba(30, 30, 47, 0.9);
@@ -230,205 +218,6 @@
             color: #ecf0f1;
         }
 
-        /* Services Section */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) rotate(2deg);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            transition: transform 0.5s ease, filter 0.5s ease;
-        }
-
-        .service-card:hover img {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
-
-        .service-card h3 {
-            padding: 20px 25px 10px;
-            font-size: 1.5em;
-            color: #ecf0f1;
-            transition: color 0.3s ease;
-        }
-
-        .service-card:hover h3 {
-            color: #ff6b6b;
-        }
-
-        .service-card p {
-            padding: 0 25px 20px;
-            color: #bdc3c7;
-            font-size: 1em;
-        }
-
-        /* Projects Section */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) rotate(-2deg);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-images {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .project-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .project-images img.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .project-card:hover .project-images img {
-            animation: cycleImages 6s infinite;
-        }
-
-        @keyframes cycleImages {
-            0%, 33% { opacity: 1; transform: scale(1); }
-            34%, 66% { opacity: 0; transform: scale(1.05); }
-            67%, 100% { opacity: 0; transform: scale(1.1); }
-        }
-
-        .project-card h3 {
-            padding: 20px 25px 10px;
-            font-size: 1.5em;
-            color: #ecf0f1;
-            transition: color 0.3s ease;
-        }
-
-        .project-card:hover h3 {
-            color: #00ddeb;
-        }
-
-        .project-card p {
-            padding: 0 25px 15px;
-            color: #bdc3c7;
-            font-size: 1em;
-        }
-
-        .project-card a {
-            display: block;
-            padding: 12px;
-            background: linear-gradient(135deg, #00ddeb, #ff6b6b);
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
-            border-radius: 0 0 20px 20px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .project-card a:hover {
-            background: linear-gradient(135deg, #ff6b6b, #00ddeb);
-            transform: scale(1.1);
-        }
-
-        /* Contact Me Section */
-        #contact {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin: 0 20px;
-            transition: transform 0.5s ease;
-        }
-
-        #contact:hover {
-            transform: scale(1.02);
-        }
-
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ecf0f1;
-            font-size: 1em;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.03);
-            outline: none;
-        }
-
-        .contact-form textarea {
-            height: 160px;
-            resize: none;
-        }
-
-        .contact-form button {
-            background: linear-gradient(135deg, #00ddeb, #ff6b6b);
-            color: #fff;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 10px 20px rgba(0, 221, 235, 0.4);
-            background: linear-gradient(135deg, #ff6b6b, #00ddeb);
-        }
-
         /* Footer */
         footer {
             background: rgba(30, 30, 47, 0.9);
@@ -455,7 +244,6 @@
             <li style="--i: 2;"><a href="#services">Services</a></li>
             <li style="--i: 3;"><a href="#projects">Projects</a></li>
             <li style="--i: 4;"><a href="#skills">Skills</a></li>
-            <li style="--i: 5;"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -482,59 +270,14 @@
                 <p>Custom scripts, automation tools, and web apps built with Python’s power.</p>
             </div>
             <div class="service-card">
-                <img src="https://via.placeholder.com/400x180" alt="Data Analysis Services">
-                <h3>Data Analysis</h3>
-                <p>Deep insights, statistical modeling, and visualization from raw data.</p>
+                <img src="https://via.placeholder.com/400x180" alt="Data Visualization">
+                <h3>Data Visualization</h3>
+                <p>Transform raw data into easy-to-understand visuals using Tableau.</p>
             </div>
             <div class="service-card">
-                <img src="https://via.placeholder.com/400x180" alt="Machine Learning Services">
-                <h3>Machine Learning</h3>
-                <p>Predictive models, AI-driven solutions, and intelligent automation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="https://via.placeholder.com/400x220" alt="Telecom Churn 1" class="active">
-                    <img src="https://via.placeholder.com/400x220/FF5733" alt="Telecom Churn 2">
-                    <img src="https://via.placeholder.com/400x220/33FF57" alt="Telecom Churn 3">
-                </div>
-                <h3>Telecom-Churn</h3>
-                <p>Analyzing customer churn in telecom using Jupyter Notebook to uncover retention strategies.</p>
-                <a href="https://github.com/OgbeniAyodeji/Telecom-Churn" target="_blank">Explore</a>
-            </div>
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="https://via.placeholder.com/400x220" alt="Tableau Viz 1" class="active">
-                    <img src="https://via.placeholder.com/400x220/FFC107" alt="Tableau Viz 2">
-                </div>
-                <h3>Tableau-Visualisation-Of-Datasets</h3>
-                <p>Visualizing datasets with Tableau to reveal trends and insights.</p>
-                <a href="https://github.com/OgbeniAyodeji/Tableau-Visualisation-Of-Datasets" target="_blank">Explore</a>
-            </div>
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="https://via.placeholder.com/400x220" alt="R Analysis 1" class="active">
-                    <img src="https://via.placeholder.com/400x220/9C27B0" alt="R Analysis 2">
-                    <img src="https://via.placeholder.com/400x220/2196F3" alt="R Analysis 3">
-                </div>
-                <h3>R-Analysis</h3>
-                <p>Customer segmentation with clustering and classification in R.</p>
-                <a href="https://github.com/OgbeniAyodeji/R-Analysis" target="_blank">Explore</a>
-            </div>
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="https://via.placeholder.com/400x220" alt="SQL Analysis 1" class="active">
-                    <img src="https://via.placeholder.com/400x220/4CAF50" alt="SQL Analysis 2">
-                </div>
-                <h3>SQL-Analysis</h3>
-                <p>Data-driven decision-making with SQL on complex datasets.</p>
-                <a href="https://github.com/OgbeniAyodeji/SQL-Analysis" target="_blank">Explore</a>
+                <img src="https://via.placeholder.com/400x180" alt="SQL Services">
+                <h3>SQL Analysis</h3>
+                <p>Expert-level querying, database optimization, and complex data analysis.</p>
             </div>
         </div>
     </section>
@@ -544,51 +287,24 @@
         <h2 class="section-title">Skills</h2>
         <div class="skills">
             <div class="skill">
+                <i class="fab fa-python"></i>
+                <p>Python</p>
+            </div>
+            <div class="skill">
                 <i class="fas fa-database"></i>
                 <p>SQL</p>
             </div>
             <div class="skill">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fab fa-tableau"></i>
                 <p>Tableau</p>
             </div>
-            <div class="skill">
-                <i class="fab fa-r-project"></i>
-                <p>R</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Me Section -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-form">
-            <form action="mailto:YOUR_EMAIL_HERE@example.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Drop a Message" required></textarea>
-                <button type="submit">Send It</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Get in touch: <a href="mailto:YOUR_EMAIL_HERE@example.com">YOUR_EMAIL_HERE@example.com</a></p>
+        <p>&copy; 2025 Ayodeji Ogundipe | All Rights Reserved</p>
     </footer>
-
-    <!-- Simple Scroll Reveal Script -->
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => observer.observe(section));
-    </script>
 
 </body>
 
